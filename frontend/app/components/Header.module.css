@@ -1,0 +1,98 @@
+.header {
+  width: 100%;
+  background-color: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.headerLogo img {
+  height: auto;
+  width: auto;
+  max-height: 40px;
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navLink {
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  transition: opacity 0.2s ease;
+  text-shadow: 0 0 8px transparent, 0 0 1px transparent;
+  transition: text-shadow 0.2s ease;
+}
+
+.navLink:hover {
+  font-size: 12px;
+  text-align: center;
+  color: #63ff66;
+  text-shadow: 0 0 24px #63ff66, 0 0 24px #63ff66, 0 0 2px #63ff66,
+    0 0 1px #63ff66;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btnFree {
+  font-weight: 400;
+  font-size: 12px;
+  font-variant: all-small-caps;
+  text-align: center;
+  color: #63ff66;
+  background: rgba(99, 255, 102, 0.1);
+  border-radius: 100px;
+  padding: 8px 12px;
+  width: 47px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.btnAuth {
+  font-weight: 400;
+  font-size: 12px;
+  font-variant: all-small-caps;
+  text-align: center;
+  color: #63ff66;
+  border: 0.5px solid #63ff66;
+  border-radius: 100px;
+  padding: 8px 24px;
+  width: 121px;
+  height: 24px;
+  box-shadow: 0 0 4px 0 #63ff66, 0 0 2px 0 #63ff66;
+  display: flex;
+  align-items: center;
+  text-shadow: 
+  0 0 8px #63ff66,
+  0 0 1px #63ff66;  }
