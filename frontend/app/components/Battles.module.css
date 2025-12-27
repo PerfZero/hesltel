@@ -1,0 +1,400 @@
+.battles {
+  width: 100%;
+  background-color: #000000;
+  padding: 3rem 0;
+}
+
+.battlesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.battlesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.battlesTitle {
+    font-weight: 700;
+    font-size: 40px;
+    font-variant: all-small-caps;
+    color: #63ff66;
+  margin: 0;
+  /* text-shadow: 
+    0 0 8px #63ff66,
+    0 0 1px #63ff66; */
+
+    text-shadow: 
+    0 0 24px  #63ff66,  
+    0 0 24px  #63ff66, 
+    0 0 2px  #63ff66, 
+  0 0 1px  #63ff66;    
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #2c2c2c;
+border-radius: 100px;
+  border-radius: 100px;
+  padding: 4px;
+}
+
+.toggleButton {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleButtonActive {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.toggleButton:hover {
+  color: #fff;
+}
+
+.battlesContent {
+  display: flex;
+  gap: 2rem;
+}
+
+.pastBattle {
+  --border-width: 1.83px;
+  flex: 0 0 70%;
+  background: hsla(0, 0%, 0%, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 32px;
+  padding: calc(2rem + var(--border-width));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.pastBattle::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: calc(32px - var(--border-width));
+  background: 
+    linear-gradient(135deg, #63FF66 0%, rgba(59, 153, 61, 0) 50%),
+    linear-gradient(315deg, #63FF66 0%, rgba(59, 153, 61, 0) 50%);
+  mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: var(--border-width);
+  pointer-events: none;
+}
+
+.pastBattleInfo {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.battleLabel {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  font-variant: all-small-caps;
+  color: #63ff66;
+}
+
+.battleMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 300;
+  font-size: 16px;
+  color: #fff;
+}
+
+
+.metaValue {
+    font-weight: 900;
+    color: #63ff66;
+}
+
+.watchLink {
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: underline !important;
+    text-decoration-skip-ink: none !important;
+    text-align: center;
+    color: #63ff66;
+}
+
+.watchLink:hover {
+  text-shadow: 
+    0 0 16px #63ff66,
+    0 0 2px #63ff66;
+}
+
+.battleResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.battleParticipantLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  margin-right: auto;
+}
+
+.battleParticipantRight{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.participantImageWrapper {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.participantImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.participantName {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  font-variant: all-small-caps;
+  color: #fff;
+  margin: 0;
+}
+
+.participantScoreLeft,
+.participantScoreRight {
+    font-weight: 700;
+    font-size: 40px;
+    color: #63ff66;
+    text-shadow: 0 0 24px  #63ff66,
+     0 0 24px  #63ff66,
+      0 0 2px  #63ff66, 
+      0 0 1px  #63ff66;
+}
+
+.participantScoreRight{
+    opacity: 0.5;
+    opacity: 0.5;
+    text-shadow: none;
+}
+
+.vs {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-variant: all-small-caps;
+  color: #fff;
+}
+
+.nextBattle {
+  --border-width: 1.83px;
+  flex: 0 0 30%;
+  background: hsla(0, 0%, 0%, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 32px;
+  padding: calc(2rem + var(--border-width));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nextBattle::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: calc(32px - var(--border-width));
+  background: 
+    linear-gradient(135deg, #ffffff 0%, rgba(33, 152, 35, 0) 50%),
+    linear-gradient(315deg, #ffffff 0%, rgba(59, 153, 61, 0) 50%);
+  mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: var(--border-width);
+  pointer-events: none;
+}
+
+.nextBattleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.nextBattleTitle {
+    font-variant: all-small-caps;
+    font-weight: 900;
+font-size: 16px;
+font-variant: all-small-caps;
+color: #63ff66;
+
+}
+
+.detailsLink {
+    font-weight: 500;
+    font-size: 12px;
+    font-variant: all-small-caps;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    color: #63ff66;
+}
+
+.detailsLink:hover {
+  text-shadow: 
+    0 0 16px #63ff66,
+    0 0 2px #63ff66;
+}
+
+.nextBattleParticipants {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nextParticipant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nextParticipantImageWrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.nextParticipantImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nextVs {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  font-variant: all-small-caps;
+  color: #63ff66;
+  text-shadow: 
+    0 0 8px #63ff66,
+    0 0 1px #63ff66;
+}
+
+.nextParticipantName {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  font-variant: all-small-caps;
+  color: #fff;
+  margin: 0;
+}
+
+.nextBattleInfo {
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .battles {
+    padding: 2rem 0;
+  }
+
+  .battlesContainer {
+    padding: 0 1rem;
+  }
+
+  .battlesHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .battlesContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .pastBattle {
+    flex: 1;
+  }
+
+  .nextBattle {
+    flex: 1;
+  }
+
+
+  .battleResult {
+    gap: 1rem;
+  }
+
+  .participantImageWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .nextParticipantImageWrapper {
+    width: 60px;
+    height: 60px;
+  }
+}
+

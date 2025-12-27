@@ -1,4 +1,7 @@
 import Header from './components/Header'
+import Player from './components/Player'
+import Battles from './components/Battles'
+import Footer from './components/Footer'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -20,6 +23,9 @@ export default function Home() {
           <div className={styles.videoText}>DIGITAL HU$TLAS</div>
         </div>
       </div>
+      <Player />
+      <Battles />
+      <Footer />
     </main>
   )
 }

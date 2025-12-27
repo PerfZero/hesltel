@@ -69,3 +69,4 @@ docker-compose restart frontend
 
 После установки шрифт должен автоматически применяться ко всему приложению. Проверьте в браузере через DevTools (Elements -> Computed -> font-family), что используется SF Pro Display.
 
+
