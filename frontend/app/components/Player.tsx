@@ -1,20 +1,68 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './Player.module.css'
+
+declare global {
+  interface Window {
+    liquidGL: any
+  }
+}
 
 export default function Player() {
   const [isPlaying, setIsPlaying] = useState(false)
+  const glassCardRef = useRef<HTMLDivElement>(null)
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
   }
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const initLiquidGL = () => {
+      if (!window.liquidGL || !glassCardRef.current) {
+        setTimeout(initLiquidGL, 100)
+        return
+      }
+
+      window.liquidGL({
+        snapshot: '.player',
+        target: '.glassCard',
+        resolution: 1.0,
+        refraction: 0.01,
+        bevelDepth: 0.08,
+        bevelWidth: 0.15,
+        frost: 0,
+        shadow: false,
+        specular: true,
+        reveal: 'false',
+        tilt: false,
+        magnify: 1,
+        on: {
+          init(instance: any) {
+            console.log('liquidGL ready!', instance)
+          },
+        },
+      })
+    }
+
+    if (window.liquidGL) {
+      initLiquidGL()
+    } else {
+      const checkInterval = setInterval(() => {
+        if (window.liquidGL) {
+          clearInterval(checkInterval)
+          initLiquidGL()
+        }
+      }, 100)
+
+      return () => clearInterval(checkInterval)
+    }
+  }, [])
+
   return (
     <div className={styles.player}>
-     
-      <div className={styles.playerOverlay}></div>
-      <div className={styles.playerContainer}>
       <video 
         className={styles.playerVideo}
         autoPlay
@@ -24,7 +72,9 @@ export default function Player() {
       >
         <source src="/video/back.mp4" type="video/mp4" />
       </video>
-        <div className={styles.glassCard}>
+      <div className={styles.playerContainer}>
+        <div ref={glassCardRef} className={`${styles.glassCard} glassCard`}></div>
+        <div className={styles.content}>
           <div className={styles.playerHeader}>
             <div className={styles.nowPlaying}>
               <span className={styles.nowPlayingText}>Сейчас играет</span>
