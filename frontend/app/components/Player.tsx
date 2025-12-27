@@ -34,9 +34,9 @@ export default function Player() {
         bevelDepth: 0.08,
         bevelWidth: 0.15,
         frost: 0,
-        shadow: false,
+        shadow: true,
         specular: true,
-        reveal: 'false',
+        reveal: 'fade',
         tilt: false,
         magnify: 1,
         on: {
